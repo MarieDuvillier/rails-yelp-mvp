@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <ul class="list-unstyled">
+        <h1><%=  @restaurant.name %></h1>
+        <p><%= @restaurant.address %></p>
+        <p><%= @restaurant.category %> Food</p>
+        <p><% @restaurant.reviews.each do |review| %></p>
+        <p> Note :<%= review.rating %></p>
+        <p> <%= review.content %></p>
+        <% end  %>
+
+        <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+      </div>
+    </div>
+  </div>
